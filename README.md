@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# NOWAY
+
+Personal site → [noway.vercel.app](https://noway.vercel.app)
+
+Built with [Astro](https://astro.build) · deployed on [Vercel](https://vercel.com).
+
+## Run locally
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open http://localhost:4321/
 
-## 🚀 Project Structure
+## Adding a project (v2 workflow)
 
-Inside of your Astro project, you'll see the following folders and files:
+Each project lives at `src/content/projects/<slug>/`:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/content/projects/example-project/
+├── index.md           # frontmatter + writeup
+├── cover.png          # gallery thumbnail
+└── screenshot-1.png   # optional additional images
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Required frontmatter:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```yaml
+---
+title: "Project Title"
+description: "One-line shown on the card"
+tags: ["Tech", "Tag", "List"]
+cover: "./cover.png"
+date: 2026-01-15
+status: "live"   # live | wip | dead
+featured: false
+---
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+Optional: `gallery`, `liveUrl`, `repoUrl`, `videoUrl`. See `src/content.config.ts` for the full schema.
 
-## 🧞 Commands
+Push to `main` → Vercel auto-deploys → new project appears at `/projects/<slug>/`.
 
-All commands are run from the root of the project, from a terminal:
+## Project docs
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Design spec: `docs/superpowers/specs/2026-05-20-noway-portfolio-design.md`
+- Implementation plan: `docs/superpowers/plans/2026-05-20-noway-portfolio-v1-implementation.md`

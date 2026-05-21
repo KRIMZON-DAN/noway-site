@@ -1,0 +1,50 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <svg
+    class="sigil"
+    viewBox="0 0 32 32"
+    width="20"
+    height="20"
+    aria-hidden="true"
+  >
+    <polygon
+      points="16,4 28,26 4,26"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+    />
+    <circle cx="16" cy="20" r="2" fill="currentColor" />
+  </svg>
+  <p class="copy">&copy; {year} NOWAY</p>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    color: var(--color-text-very-dim);
+  }
+
+  .sigil {
+    color: var(--color-text-dim);
+    transition: color var(--duration-slow) var(--ease-slow);
+    animation: sigil-pulse 4s ease-in-out infinite;
+  }
+
+  .copy {
+    font-family: var(--font-mono);
+    font-size: var(--size-small);
+    letter-spacing: 0.15em;
+  }
+
+  @keyframes sigil-pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; color: var(--color-accent); }
+  }
+</style>
