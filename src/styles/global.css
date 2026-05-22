@@ -111,16 +111,20 @@ body:has(.wordmark:hover) .grain {
 }
 
 /* ---------- Vignette ---------- */
+/* Rounded-rectangle silhouette via a transparent rounded rect with a stack
+   of outset box-shadows — graduated soft fade at the edge, then uniform
+   darkening filling the rest. */
 .vignette {
   position: fixed;
-  inset: 0;
+  inset: 4% 3%;
+  border-radius: 56px;
   pointer-events: none;
   z-index: 999;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 40%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
+  box-shadow:
+    0 0 40px 5px rgba(0, 0, 0, 0.35),
+    0 0 110px 50px rgba(0, 0, 0, 0.55),
+    0 0 260px 200px rgba(0, 0, 0, 0.75),
+    0 0 0 9999px rgba(0, 0, 0, 0.85);
 }
 
 /* ---------- Layout helpers ---------- */
