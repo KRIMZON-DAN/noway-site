@@ -68,6 +68,10 @@ a:hover {
 .grain {
   position: fixed;
   inset: 0;
+  /* SVG is a replaced element — without explicit dimensions it falls back to
+     its intrinsic 300x150 size and `inset: 0` won't stretch it. */
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: 1000;
   opacity: 0.55;
