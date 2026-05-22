@@ -116,15 +116,15 @@ body:has(.wordmark:hover) .grain {
    darkening filling the rest. */
 .vignette {
   position: fixed;
-  inset: 3% 2%;
-  border-radius: 20px;
+  inset: 1.2% 0.7%;
+  border-radius: 14px;
   pointer-events: none;
   z-index: 999;
-  /* Tighter falloff so the rectangle silhouette stays sharp instead of
-     diffusing into a soft elliptical haze. */
+  /* Rect nearly fills the viewport; the dark falloff is squeezed close
+     to the edge so the open area stays clean. */
   box-shadow:
-    0 0 30px 10px rgba(0, 0, 0, 0.55),
-    0 0 0 9999px rgba(0, 0, 0, 0.88);
+    0 0 12px 4px rgba(0, 0, 0, 0.6),
+    0 0 0 9999px rgba(0, 0, 0, 0.93);
 }
 
 /* ---------- Layout helpers ---------- */
