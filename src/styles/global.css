@@ -116,8 +116,8 @@ body:has(.wordmark:hover) .grain {
    darkening filling the rest. */
 .vignette {
   position: fixed;
-  inset: 4% 3%;
-  border-radius: 56px;
+  inset: 2% 1.5%;
+  border-radius: 24px;
   pointer-events: none;
   z-index: 999;
   box-shadow:
