@@ -91,9 +91,9 @@ a:hover {
   transition: opacity 600ms var(--ease-slow), filter 600ms var(--ease-slow);
 }
 
-/* Wordmark hover → grain "breathes" (brightness boost + opacity pulse). */
+/* Wordmark hover → grain "breathes" once, then settles. */
 body:has(.wordmark:hover) .grain {
-  animation: grain-breathe 1.6s ease-in-out infinite;
+  animation: grain-breathe 1.6s ease-in-out 1;
 }
 
 @keyframes grain-breathe {
