@@ -28,6 +28,11 @@
       0 0 32px var(--color-accent),
       0 0 64px rgba(220, 20, 20, 0.35);
 
+    /* Displacement filter warps the wordmark + its red bleed shadow,
+       fed by the animated turbulence defined in BaseLayout — heat-shimmer
+       look around the glow. */
+    filter: url(#wordmark-distort);
+
     transition: text-shadow var(--duration-slow) var(--ease-slow);
     animation: wordmark-in 1200ms var(--ease-slow) both;
   }

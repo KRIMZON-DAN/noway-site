@@ -44,10 +44,18 @@ const {
       <filter id="noise">
         <feTurbulence
           type="fractalNoise"
-          baseFrequency="0.35 0.28"
+          baseFrequency="0.42 0.34"
           numOctaves="3"
-          seed="5"
-        />
+          seed="1"
+        >
+          <animate
+            attributeName="seed"
+            values="1;3;7;12;19;25;31;42;48;55;63;71"
+            dur="0.9s"
+            calcMode="discrete"
+            repeatCount="indefinite"
+          />
+        </feTurbulence>
         <feColorMatrix
           type="matrix"
           values="0 0 0 0 1
@@ -59,8 +67,40 @@ const {
       <rect width="100%" height="100%" filter="url(#noise)" />
     </svg>
 
+    <svg
+      class="filter-defs"
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      aria-hidden="true"
+    >
+      <filter id="wordmark-distort" x="-30%" y="-30%" width="160%" height="160%">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.012 0.022"
+          numOctaves="2"
+          seed="1"
+          result="turb"
+        >
+          <animate
+            attributeName="seed"
+            values="1;5;9;14;19;24;28;33;38;44"
+            dur="1.4s"
+            calcMode="discrete"
+            repeatCount="indefinite"
+          />
+        </feTurbulence>
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="turb"
+          scale="6"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
+
     <div class="vignette" aria-hidden="true"></div>
-    <div class="vhs" aria-hidden="true"></div>
 
     <main class="page">
       <slot />
