@@ -1,8 +1,8 @@
 # NOWAY
 
-Personal site → [noway.vercel.app](https://noway.vercel.app)
+Personal portfolio site.
 
-Built with [Astro](https://astro.build) · deployed on [Vercel](https://vercel.com).
+Built with [Astro](https://astro.build) — self-hosted as a static site.
 
 ## Run locally
 
@@ -12,6 +12,14 @@ npm run dev
 ```
 
 Open http://localhost:4321/
+
+## Build for deployment
+
+```sh
+npm run build
+```
+
+Output is a fully static site in `dist/`. Serve that directory with any static web server (nginx, Caddy, Apache, or a simple Node static server).
 
 ## Adding a project (v2 workflow)
 
@@ -40,7 +48,7 @@ featured: false
 
 Optional: `gallery`, `liveUrl`, `repoUrl`, `videoUrl`. See `src/content.config.ts` for the full schema.
 
-Push to `main` → Vercel auto-deploys → new project appears at `/projects/<slug>/`.
+Rebuild (`npm run build`) and redeploy `dist/` → new project appears at `/projects/<slug>/`.
 
 ## Project docs
 

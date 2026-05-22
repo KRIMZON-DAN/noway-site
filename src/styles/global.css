@@ -1,3 +1,12 @@
+/* ---------- Local fonts ---------- */
+@font-face {
+  font-family: 'Rotting Genesis';
+  src: url('/fonts/rotting-genesis.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ---------- Design Tokens (BLACKMAGE) ---------- */
 :root {
   /* Color */
@@ -9,7 +18,7 @@
   --color-accent-bleed: rgba(220, 20, 20, 0.55);
 
   /* Typography */
-  --font-display: 'Metal Mania', system-ui, serif;
+  --font-display: 'Rotting Genesis', system-ui, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Sizing */
@@ -55,11 +64,22 @@ a:hover {
 /* ---------- Grain overlay (applied via BaseLayout) ---------- */
 .grain {
   position: fixed;
-  inset: 0;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
   pointer-events: none;
   z-index: 1000;
-  opacity: 0.18;
-  mix-blend-mode: overlay;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  animation: grain-drift 8s steps(8) infinite;
+}
+
+@keyframes grain-drift {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2%, 1%); }
+  40% { transform: translate(1%, -2%); }
+  60% { transform: translate(-1%, 2%); }
+  80% { transform: translate(2%, -1%); }
 }
 
 /* ---------- Vignette ---------- */

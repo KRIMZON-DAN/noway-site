@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local font source assets (shipped copy lives in public/fonts/)
+Fonts/
